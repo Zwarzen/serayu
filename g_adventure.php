@@ -2,22 +2,14 @@
 <?php include("_header.php"); ?>
 <!-- /.col-lg-3 -->
 
-<div class="searchbar" style="position: sticky; margin-top: 20px; width: 30%;">
-  <div class="search-container" style="padding-right: 160px; ">
-    <form method="post" action="g_adventure.php">
-      <input type="text" placeholder="Search.." name="pencarian">
-      <button type="submit" style="position: absolute;">Search</button>
-    </form>
-  </div>
-</div>
-
 <div class="genre" id="judul">
   <h2>Adventure</h2>
 </div>
 
-<div class="col-lg-7" style="margin: auto; width: 50%; padding: 0 0 10 0px; ">
+<div class="col-lg-8" style="width: 50%; padding: 0px; ">
   <div class="row">
     <?php
+    error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
     //looping mengambil data dan membuat pagination
     /*
                 - $batas untuk mengambil batas data yang ditampilkan
@@ -46,6 +38,8 @@
     }
     $sql_data = mysqli_query($con, $query) or die(mysqli_error($con));
     if (mysqli_num_rows($sql_data) > 0) {
+
+
       while ($data = mysqli_fetch_array($sql_data)) { ?>
 
         <div class="col-lg-4 col-md-6 mb-4">
@@ -65,12 +59,12 @@
                 }
                 
                 ?>
-                <p id="pl"> <?= $data['deskripsi'] ?></p>
+                <p id="pl" style="width: 100%;"> <?= $data['deskripsi'] ?></p>
                 <small class="text-muted">Post on <?= $data['tgl'] ?></small>
-                <!----<p class="card-text"><?= $data['description'] ?></p>----->
+                <!----<p class="card-text"><?= $data['deskripsi'] ?></p>----->
             </div>
             <form method="post" action="unduh.php?id_title=<?=$data['id_title']?>">
-              <button type="submit" class="btn btn-success" style="padding-left: 58px;padding-right: 58px" ;>Download</button>
+              <button type="submit" class="btn btn-success" style="padding-left: 78px;padding-right: 78px" ;>Download</button>
             </form>
             <div class="card-footer">
               <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -79,7 +73,8 @@
         </div>
     <?php
       }
-    }else {
+    
+    } else {
       echo "<tr><td colspan=\"4\" align=\"center\">Data Tidak Ditemukan</td></tr>";
     }
     ?>
@@ -101,13 +96,13 @@
 
       ?>
     </div>
-    <div class="pagination" style="margin: auto; width: 50%; padding-left: 110px; ">
+    <div class="pagination" style="margin: auto ;width: 50%; padding-left: 150px; ">
       <ul class="pagination pagination-sm" style="margin:0; padding: 10px;">
 
         <?php
         $jml_hal = ceil($jml / $batas);
         for ($i = 1; $i <= $jml_hal; $i++) {
-          if ($i != $hal) {
+          if ($jml==6) {
             echo "<li><a href=\"?hal=$i\" style=\"margin:0; padding-left: 10px; padding-right: 10px;\">$i</a></li>";
           } else {
 
@@ -124,7 +119,7 @@
     /*
             melakukan looping hingga data habis dan membuat laman pagination
             */
-  }else {
+  } else {
     echo "<div style=\"float:left;\">";
     $jml = mysqli_num_rows(mysqli_query($con, $queryJml));
     echo "Data Hasil Pencarian : <b>$jml</b>";

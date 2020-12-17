@@ -22,6 +22,7 @@ require_once "_config/config.php";
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
   <!-- Custom styles for this template -->
   <link href="css/shop-homepage.css" rel="stylesheet">
@@ -78,7 +79,7 @@ require_once "_config/config.php";
     position: relative; 
     margin: auto; 
     width: 50%; 
-    padding-left: 200px; 
+    padding-left: 0px; 
     padding-top: 20px; 
     padding-bottom: 20px;
   }
@@ -97,9 +98,6 @@ require_once "_config/config.php";
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Home
-              <span class="sr-only">(current)</span>
-            </a>
           </li>
           <li class="nav-item">
             <div class="dropdown">
@@ -115,17 +113,22 @@ require_once "_config/config.php";
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="add.php">Add Movies</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="l_update.php">latest update</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="movie.php">movie</a>
+            <a class="nav-link" href="movie.php">Movies</a>
           </li>
         </ul>
       </div>
     </div>
+    <div class="searchbar" style="position: sticky; margin-top: 0px; width: 30%;">
+        <div class="search-container" style="padding-right: 0px; ">
+          <form method="post" action="index.php">
+          <input type="text" placeholder="Search.." name="pencarian">
+            <input type="submit" value="Search" >
+          </form>
+        </div>
+      </div>
   </nav>
 
   <!-- Page Content -->
@@ -133,8 +136,20 @@ require_once "_config/config.php";
 
     <div class="row">
 
-      <div class="col-lg-3">
+      <div class="col-lg-0">
 
         <div class="list-group">
+        </div>
+      </div>
+      <div class="w3-main" style="margin-left: 65%; float: right; position: absolute; padding-right: 30px; padding-top: 23px; width: 28%;">
+        <div class="w3-teal">
+          <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+          <div class="w3-container">
+            <h1>Visual Novel</h1>
+          </div>
+        </div>
+
+        <div class="w3-container">
+          <h3>Cuming Soon</h3>
         </div>
       </div>

@@ -2,22 +2,15 @@
 <?php include("_header.php"); ?>
 <!-- /.col-lg-3 -->
 
-<div class="searchbar" style="position: sticky; margin-top: 20px; width: 30%;">
-  <div class="search-container" style="padding-right: 160px; ">
-    <form method="post" action="g_fantasy.php">
-      <input type="text" placeholder="Search.." name="pencarian">
-      <button type="submit" style="position: absolute;">Search</button>
-    </form>
-  </div>
-</div>
 
 <div class="genre" id="judul">
   <h2>Fantasy</h2>
 </div>
 
-<div class="col-lg-7" style="margin: auto; width: 50%; padding: 0 0 10 0px; ">
+<div class="col-lg-8" style="width: 50%; padding: 0px; ">
   <div class="row">
     <?php
+    error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
     //looping mengambil data dan membuat pagination
     /*
                 - $batas untuk mengambil batas data yang ditampilkan
@@ -65,12 +58,12 @@
                 }
                 
                 ?>
-                <p id="pl"> <?= $data['deskripsi'] ?></p>
+                <p id="pl"style="width: 100%;"> <?= $data['deskripsi'] ?></p>
                 <small class="text-muted">Post on <?= $data['tgl'] ?></small>
                 <!----<p class="card-text"><?= $data['description'] ?></p>----->
             </div>
             <form method="post" action="unduh.php?id_title=<?=$data['id_title']?>">
-              <button type="submit" class="btn btn-success" style="padding-left: 58px;padding-right: 58px" ;>Download</button>
+              <button type="submit" class="btn btn-success" style="padding-left: 78px;padding-right: 78px" ;>Download</button>
             </form>
             <div class="card-footer">
               <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -101,7 +94,7 @@
 
       ?>
     </div>
-    <div class="pagination" style="margin: auto; width: 50%; padding-left: 110px; ">
+    <div class="pagination" style="margin: auto ;width: 50%; padding-left: 150px; ">
       <ul class="pagination pagination-sm" style="margin:0; padding: 10px;">
 
         <?php
