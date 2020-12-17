@@ -160,7 +160,6 @@ $querypht = "SELECT * FROM data LIMIT 3";
   }else {
     echo "<div style=\"float:left;\">";
     $jml = mysqli_num_rows(mysqli_query($con, $queryJml));
-    echo "Data Hasil Pencarian : <b>$jml</b>";
     echo "</div>";
   }
   ?>

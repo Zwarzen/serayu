@@ -149,7 +149,11 @@ require_once "_config/config.php";
           </div>
         </div>
 
-        <div class="w3-container">
-          <h3>Cuming Soon</h3>
+        <div class="w3-container" style="height: 200px; background: #c0c0c0;">
+          <h3 style="color: white;">Cuming Soon</h3>
+        </div>
+
+        <div class="discord" style="margin-top: 10px; padding-left: 10px; padding-top: 5px;padding-bottom: 5px; background-color: #aaaaaa; border-radius: 10px;">
+          <img src="gambar/discord.png" style="width: 15%;">  <h3 style="display: inline-block; color: white; text-decoration: none; margin-left: 40px;"><a href="https://discord.gg/hjM2bncGme"> Join Our Discord!</a></h3>
         </div>
       </div>
